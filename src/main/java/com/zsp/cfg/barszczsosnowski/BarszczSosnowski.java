@@ -6,9 +6,12 @@ import com.zsp.cfg.barszczsosnowski.setup.ClientProxy;
 import com.zsp.cfg.barszczsosnowski.setup.IProxy;
 import com.zsp.cfg.barszczsosnowski.setup.ModSetup;
 import com.zsp.cfg.barszczsosnowski.setup.ServerProxy;
+import com.zsp.cfg.barszczsosnowski.worldgen.BarszczFeature;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
@@ -52,6 +55,11 @@ public class BarszczSosnowski {
             Item.Properties properties = new Item.Properties()
                     .group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.BARSZCZ, properties).setRegistryName("barszcz"));
+        }
+
+        @SubscribeEvent
+        public static void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> event) {
+            event.getRegistry().register(new BarszczFeature(NoFeatureConfig::deserialize).setRegistryName("barszcz_feature"));
         }
     }
 }
