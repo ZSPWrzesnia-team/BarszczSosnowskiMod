@@ -1,6 +1,7 @@
 package com.zsp.cfg.barszczsosnowski.setup;
 
 import com.zsp.cfg.barszczsosnowski.blocks.ModBlocks;
+import com.zsp.cfg.barszczsosnowski.worldgen.BarszczGen;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -13,6 +14,6 @@ public class ModSetup {
     };
 
     public void init() {
-
+        BarszczGen.init();
     }
 }
