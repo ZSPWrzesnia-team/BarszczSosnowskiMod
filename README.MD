@@ -18,11 +18,11 @@
  * [![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com) 
  * [![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com)
  
- ##Opis modyfikacji
-  **UWAGA: Mod jest nadal w produkcji i wiekszość funkcji nie została jeszcze wprowadzona!**
+## Opis modyfikacji 
+  **UWAGA: Modyfikacja jest nadal w produkcji i wiekszość funkcji nie została jeszcze wprowadzona!**
   
  Modyfikacja dodaje Barszcz Sosnowski do Minecraft'a - gatunek inwazyjny, który jest niebezpieczny dla człowieka i roślin, którego nadmiar powinien być usunięty zanim zacznie byc realnym problemem.
  Należy jednak uważać, gdyz nadmierne usunięcie Barszczu Sosnowskiego może prowadzić do jego wyginięcia, co stawia problem dla bioróżnorodności oraz dla gracza: wyciąć należy wystarczająco, ale nie za dużo...
 
-##Użyte zaosoby
+## Użyte zaosoby
 * [Minecraft Forge](http://files.minecraftforge.net/)
