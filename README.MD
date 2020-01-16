@@ -1,4 +1,5 @@
 # Barszcz Sosnowski Mod (Minecraft Forge 1.14.4)
+ * ![](https://github.com/ZSPWrzesnia-team/BarszczSosnowskiMod/workflows/Build%20mod%20on%20code%20change/badge.svg)
  * [![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com) 
  * [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com) 
  * [![forthebadge](https://forthebadge.com/images/badges/made-with-crayons.svg)](https://forthebadge.com) 
