@@ -25,4 +25,4 @@
  Należy jednak uważać, gdyz nadmierne usunięcie Barszczu Sosnowskiego może prowadzić do jego wyginięcia, co stawia problem dla bioróżnorodności oraz dla gracza: wyciąć należy wystarczająco, ale nie za dużo...
 
 ## Użyte zaosoby
-* [Minecraft Forge](http://files.minecraftforge.net/)
+* [Minecraft Forge](http://files.minecraftforge.net/) - Szczegołowe informacje w pliku [`Forge Credits.txt`](https://github.com/ZSPWrzesnia-team/BarszczSosnowskiMod/blob/master/Forge%20Credits.txt)
