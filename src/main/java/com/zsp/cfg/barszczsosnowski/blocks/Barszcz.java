@@ -7,16 +7,16 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -63,9 +63,10 @@ public class Barszcz extends BushBlock {
         if (entityIn instanceof LivingEntity && !entityIn.isInvulnerableTo(DamageSource.IN_FIRE)) {
             Iterable<ItemStack> armor = entityIn.getArmorInventoryList();
             int armorPieces = 4;
-            Item[] requiredArmor = new Item[]{Items.LEATHER_HELMET, Items.LEATHER_CHESTPLATE, Items.LEATHER_LEGGINGS, Items.LEATHER_BOOTS, Items.LEATHER_HORSE_ARMOR};
-            for (ItemStack itemStack : armor)
-                if (Arrays.asList(requiredArmor).contains(itemStack.getItem())) {
+            Item item;
+            for (ItemStack itemStack : armor) {
+                item = itemStack.getItem();
+                if (item instanceof ArmorItem && ((ArmorItem) item).getArmorMaterial() == ArmorMaterial.LEATHER) {
                     armorPieces--;
                     if (((LivingEntity) entityIn).getRNG().nextDouble() < BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE) {
                         itemStack.setDamage(itemStack.getDamage() + 1);
@@ -75,6 +76,7 @@ public class Barszcz extends BushBlock {
                         }
                     }
                 }
+            }
             entityIn.setFireTimer(Math.max(160 / 4 * Math.max(0, armorPieces), entityIn.getFireTimer()));
         }
     }
