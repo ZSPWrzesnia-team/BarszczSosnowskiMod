@@ -68,13 +68,9 @@ public class Barszcz extends BushBlock {
                 item = itemStack.getItem();
                 if (item instanceof ArmorItem && ((ArmorItem) item).getArmorMaterial() == ArmorMaterial.LEATHER) {
                     armorPieces--;
-                    if (((LivingEntity) entityIn).getRNG().nextDouble() < BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE) {
-                        itemStack.setDamage(itemStack.getDamage() + 1);
-                        if (itemStack.getDamage() > itemStack.getMaxDamage()) {
-                            itemStack.shrink(1);
-                            itemStack.setDamage(0);
-                        }
-                    }
+                    if (((LivingEntity) entityIn).getRNG().nextDouble() < BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE)
+                        itemStack.damageItem(1, (LivingEntity) entityIn, LivingEntity -> {
+                        });
                 }
             }
             entityIn.setFireTimer(Math.max(160 / 4 * Math.max(0, armorPieces), entityIn.getFireTimer()));
