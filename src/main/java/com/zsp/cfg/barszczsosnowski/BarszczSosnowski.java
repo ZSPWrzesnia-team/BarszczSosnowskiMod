@@ -2,14 +2,17 @@ package com.zsp.cfg.barszczsosnowski;
 
 import com.zsp.cfg.barszczsosnowski.blocks.Barszcz;
 import com.zsp.cfg.barszczsosnowski.blocks.ModBlocks;
+import com.zsp.cfg.barszczsosnowski.mobs.GardenPOI;
 import com.zsp.cfg.barszczsosnowski.setup.ClientProxy;
 import com.zsp.cfg.barszczsosnowski.setup.IProxy;
 import com.zsp.cfg.barszczsosnowski.setup.ModSetup;
 import com.zsp.cfg.barszczsosnowski.setup.ServerProxy;
 import com.zsp.cfg.barszczsosnowski.worldgen.BarszczFeature;
 import net.minecraft.block.Block;
+import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.village.PointOfInterestType;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.event.RegistryEvent;
@@ -60,6 +63,16 @@ public class BarszczSosnowski {
         @SubscribeEvent
         public static void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> event) {
             event.getRegistry().register(new BarszczFeature(NoFeatureConfig::deserialize).setRegistryName("barszcz_feature"));
+        }
+
+        @SubscribeEvent
+        public static void onPoIRegistry(final RegistryEvent.Register<PointOfInterestType> event) {
+            event.getRegistry().register(new GardenPOI());
+        }
+
+        @SubscribeEvent
+        public static void onProfessionRegistry(final RegistryEvent.Register<VillagerProfession> event) {
+
         }
     }
 }
