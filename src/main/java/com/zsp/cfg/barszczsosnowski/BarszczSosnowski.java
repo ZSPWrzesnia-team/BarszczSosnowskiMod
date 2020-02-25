@@ -1,6 +1,7 @@
 package com.zsp.cfg.barszczsosnowski;
 
 import com.zsp.cfg.barszczsosnowski.blocks.Barszcz;
+import com.zsp.cfg.barszczsosnowski.blocks.GardenTableBlock;
 import com.zsp.cfg.barszczsosnowski.blocks.ModBlocks;
 import com.zsp.cfg.barszczsosnowski.mobs.GardenPOI;
 import com.zsp.cfg.barszczsosnowski.setup.ClientProxy;
@@ -50,6 +51,7 @@ public class BarszczSosnowski {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new Barszcz());
+            event.getRegistry().register(new GardenTableBlock());
         }
 
         //Item registration
@@ -58,6 +60,7 @@ public class BarszczSosnowski {
             Item.Properties properties = new Item.Properties()
                     .group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.BARSZCZ, properties).setRegistryName("barszcz"));
+            event.getRegistry().register(new BlockItem(ModBlocks.GARDEN_TABLE, properties).setRegistryName("garden_table"));
         }
 
         @SubscribeEvent

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "block/oak_planks",
+    "down": "block/oak_planks",
+    "up": "barszczsosnowski:block/garden_table/top",
+    "north": "barszczsosnowski:block/garden_table/side",
+    "east": "barszczsosnowski:block/garden_table/side",
+    "south": "barszczsosnowski:block/garden_table/side",
+    "west": "barszczsosnowski:block/garden_table/side"
+  }
+}
