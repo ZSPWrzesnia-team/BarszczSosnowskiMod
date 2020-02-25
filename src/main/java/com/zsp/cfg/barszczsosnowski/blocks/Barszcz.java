@@ -11,6 +11,8 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
@@ -59,7 +61,7 @@ public class Barszcz extends BushBlock {
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
         if (BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE < 0 || BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE > 1)
             throw new IllegalStateException("BARSZCZ_ARMOR_DAMAGE_CHANCE config is invalid. Cannot continue.");
-        if (entityIn instanceof LivingEntity && !entityIn.isImmuneToFire()) {
+        if (entityIn instanceof LivingEntity && !entityIn.isImmuneToFire() && !(((LivingEntity) entityIn).getActivePotionEffect(Effects.FIRE_RESISTANCE) instanceof EffectInstance)) {
             Iterable<ItemStack> armor = entityIn.getArmorInventoryList();
             int armorPieces = 4;
             Item item;
