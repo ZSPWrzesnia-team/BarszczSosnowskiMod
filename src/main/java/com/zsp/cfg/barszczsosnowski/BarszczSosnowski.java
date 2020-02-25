@@ -4,6 +4,7 @@ import com.zsp.cfg.barszczsosnowski.blocks.Barszcz;
 import com.zsp.cfg.barszczsosnowski.blocks.GardenTableBlock;
 import com.zsp.cfg.barszczsosnowski.blocks.ModBlocks;
 import com.zsp.cfg.barszczsosnowski.mobs.GardenPOI;
+import com.zsp.cfg.barszczsosnowski.mobs.GardenerProfession;
 import com.zsp.cfg.barszczsosnowski.setup.ClientProxy;
 import com.zsp.cfg.barszczsosnowski.setup.IProxy;
 import com.zsp.cfg.barszczsosnowski.setup.ModSetup;
@@ -75,7 +76,7 @@ public class BarszczSosnowski {
 
         @SubscribeEvent
         public static void onProfessionRegistry(final RegistryEvent.Register<VillagerProfession> event) {
-
+            event.getRegistry().register(new GardenerProfession());
         }
     }
 }
