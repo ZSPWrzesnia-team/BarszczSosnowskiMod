@@ -58,6 +58,8 @@ public class Barszcz extends BushBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+        if (BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE < 0 || BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE > 1)
+            throw new IllegalStateException("BARSZCZ_ARMOR_DAMAGE_CHANCE config is invalid. Cannot continue.");
         if (entityIn instanceof LivingEntity && !entityIn.isInvulnerableTo(DamageSource.IN_FIRE)) {
             Iterable<ItemStack> armor = entityIn.getArmorInventoryList();
             int armorPieces = 4;
@@ -65,7 +67,7 @@ public class Barszcz extends BushBlock {
             for (ItemStack itemStack : armor)
                 if (Arrays.asList(requiredArmor).contains(itemStack.getItem())) {
                     armorPieces--;
-                    if (((LivingEntity) entityIn).getRNG().nextFloat() <= 0.02f) {
+                    if (((LivingEntity) entityIn).getRNG().nextDouble() < BarszczConfig.BARSZCZ_ARMOR_DAMAGE_CHANCE) {
                         itemStack.setDamage(itemStack.getDamage() + 1);
                         if (itemStack.getDamage() > itemStack.getMaxDamage()) {
                             itemStack.shrink(1);
