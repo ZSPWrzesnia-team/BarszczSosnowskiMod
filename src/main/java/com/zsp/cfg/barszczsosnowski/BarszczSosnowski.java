@@ -51,6 +51,7 @@ public class BarszczSosnowski {
         //Block registration
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
+            LOGGER.info("Now registering blocks");
             event.getRegistry().register(new Barszcz());
             event.getRegistry().register(new GardenTableBlock());
         }
@@ -58,6 +59,7 @@ public class BarszczSosnowski {
         //Item registration
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
+            LOGGER.info("Now registering items");
             Item.Properties properties = new Item.Properties()
                     .group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.BARSZCZ, properties).setRegistryName("barszcz"));
@@ -66,16 +68,19 @@ public class BarszczSosnowski {
 
         @SubscribeEvent
         public static void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> event) {
+            LOGGER.info("Now registering features");
             event.getRegistry().register(new BarszczFeature(NoFeatureConfig::deserialize).setRegistryName("barszcz_feature"));
         }
 
         @SubscribeEvent
         public static void onPoIRegistry(final RegistryEvent.Register<PointOfInterestType> event) {
+            LOGGER.info("Now registering points of interest");
             event.getRegistry().register(new GardenPOI());
         }
 
         @SubscribeEvent
         public static void onProfessionRegistry(final RegistryEvent.Register<VillagerProfession> event) {
+            LOGGER.info("Now registering professions");
             event.getRegistry().register(new GardenerProfession());
         }
     }
