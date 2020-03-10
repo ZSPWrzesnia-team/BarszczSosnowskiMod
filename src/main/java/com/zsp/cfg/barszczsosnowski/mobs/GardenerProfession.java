@@ -6,7 +6,7 @@ import net.minecraft.entity.merchant.villager.VillagerProfession;
 public class GardenerProfession extends VillagerProfession {
 
     public GardenerProfession() {
-        super("gardener", ModPoIs.GARDEN, ImmutableSet.of(), ImmutableSet.of());
+        super("gardener", ModPoIs.GARDENER, ImmutableSet.of(), ImmutableSet.of());
         setRegistryName("gardener");
     }
 }

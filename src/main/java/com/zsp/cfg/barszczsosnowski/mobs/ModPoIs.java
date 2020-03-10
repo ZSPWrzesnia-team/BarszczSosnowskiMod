@@ -4,6 +4,6 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModPoIs {
 
-    @ObjectHolder("barszczsosnowski:garden")
-    public static GardenPOI GARDEN;
+    @ObjectHolder("barszczsosnowski:gardener")
+    public static GardenPOI GARDENER;
 }

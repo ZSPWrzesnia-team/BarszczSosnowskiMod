@@ -7,11 +7,11 @@ import net.minecraft.village.PointOfInterestType;
 public class GardenPOI extends PointOfInterestType {
     public GardenPOI() {
         //TODO: Create the garden block
-        super("garden",
+        super("gardener",
                 ImmutableSet.copyOf(ModBlocks.GARDEN_TABLE.getStateContainer().getValidStates()),
                 1,
                 null,
                 1);
-        setRegistryName("garden");
+        setRegistryName("gardener");
     }
 }
